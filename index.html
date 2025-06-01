@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Kindergarten Interview Prep Guide for Ira</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .layout {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 16px 24px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-icon {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-right: 12px;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border: none;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 16px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            color: #34495e;
+            margin: 0;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -8px;
+        }
+
+        .col {
+            padding: 8px;
+        }
+
+        .col-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+        .col-3 { flex: 0 0 25%; max-width: 25%; }
+        .col-12 { flex: 0 0 100%; max-width: 100%; }
+
+        @media (max-width: 768px) {
+            .col-6, .col-4, .col-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .mini-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            height: 100%;
+            border: 1px solid #e8e8e8;
+        }
+
+        .mini-card.social { background: #fff5f5; border-color: #ffebee; }
+        .mini-card.academic { background: #f0f9ff; border-color: #e0f2fe; }
+        .mini-card.communication { background: #f0fff4; border-color: #e6fffa; }
+        .mini-card.independence { background: #fffbf0; border-color: #fef7e0; }
+
+        .mini-card-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .mini-card-icon.social { color: #ff6b6b; }
+        .mini-card-icon.academic { color: #45b7d1; }
+        .mini-card-icon.communication { color: #4ecdc4; }
+        .mini-card-icon.independence { color: #f39c12; }
+
+        .mini-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 8px 0;
+            color: #2c3e50;
+        }
+
+        .mini-card-text {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .skill-card {
+            height: 100%;
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .skill-card.letters { background: #ff6b6b15; border-color: #ff6b6b30; }
+        .skill-card.numbers { background: #4ecdc415; border-color: #4ecdc430; }
+        .skill-card.concepts { background: #45b7d115; border-color: #45b7d130; }
+
+        .skill-icon-container {
+            background-color: var(--skill-color);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .skill-card.letters .skill-icon-container { background-color: #ff6b6b; }
+        .skill-card.numbers .skill-icon-container { background-color: #4ecdc4; }
+        .skill-card.concepts .skill-icon-container { background-color: #45b7d1; }
+
+        .skill-title {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #2c3e50;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 4px 0;
+            border: none;
+        }
+
+        .skill-checkbox {
+            background: #d9d9d9;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .skill-checkbox.completed {
+            background: #52c41a;
+        }
+
+        .skill-text {
+            font-size: 14px;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .skill-text.completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .collapse-panel {
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .collapse-header {
+            padding: 12px 16px;
+            background: #fafafa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .collapse-header:hover {
+            background: #f5f5f5;
+        }
+
+        .collapse-content {
+            padding: 16px;
+            display: none;
+        }
+
+        .collapse-content.active {
+            display: block;
+        }
+
+        .collapse-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .collapse-arrow.active {
+            transform: rotate(180deg);
+        }
+
+        .list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .list-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .question-card {
+            height: 100%;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .question-card-header {
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            padding: 12px 16px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .question-card-body {
+            padding: 16px;
+        }
+
+        .question-item {
+            padding: 8px 0;
+            border: none;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .timeline {
+            margin: 16px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 16px;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 12px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot.green { background: #52c41a; }
+        .timeline-dot.blue { background: #1890ff; }
+        .timeline-dot.red { background: #ff4d4f; }
+
+        .timeline-content {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .timeline-strong {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .schedule-card {
+            height: 100%;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .schedule-header-week1 {
+            background: #e8f5e8;
+            color: #237804;
+            padding: 12px 16px;
+            font-weight: 600;
+            border-bottom: 1px solid #d9f7be;
+        }
+
+        .schedule-header-week2 {
+            background: #e8f4fd;
+            color: #1890ff;
+            padding: 12px 16px;
+            font-weight: 600;
+            border-bottom: 1px solid #bae7ff;
+        }
+
+        .schedule-body {
+            padding: 16px;
+        }
+
+        .tips-card {
+            height: 100%;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tips-header {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            padding: 12px 16px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .tips-body {
+            padding: 16px;
+        }
+
+        .alert {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border: 2px solid #b5d5c8;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .alert-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #52c41a;
+            margin: 8px 0;
+        }
+
+        .alert-description {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+        }
+
+        .tag.success { background: #f6ffed; color: #52c41a; border: 1px solid #d9f7be; }
+        .tag.processing { background: #e6f7ff; color: #1890ff; border: 1px solid #91d5ff; }
+        .tag.warning { background: #fffbe6; color: #faad14; border: 1px solid #ffe58f; }
+        .tag.purple { background: #f9f0ff; color: #722ed1; border: 1px solid #d3adf7; }
+
+        .final-title {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .footer-text {
+            color: white;
+            margin: 0;
+        }
+
+        @media (max-width: 576px) {
+            .content {
+                padding: 16px;
+            }
+            
+            .card-body {
+                padding: 16px;
+            }
+            
+            .hero-title {
+                font-size: 24px;
+            }
+            
+            .header-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-gift header-icon"></i>
+                <h1 class="header-title">🎯 Kindergarten Interview Prep Guide for Ira</h1>
+            </div>
+        </header>
+
+        <main class="content">
+            <!-- Hero Section -->
+            <div class="card hero-card">
+                <div class="card-body">
+                    <h2 class="hero-title">🌟 Get Ready for Kindergarten Success! 🌟</h2>
+                    <p class="hero-description">
+                        A comprehensive guide to help Ira shine in her kindergarten interview and prepare for school!
+                    </p>
+                </div>
+            </div>
+
+            <!-- What to Expect -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-smile" style="color: #ff6b6b;"></i>
+                    What to Expect in a Kindergarten Interview
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-3">
+                            <div class="mini-card social">
+                                <i class="fas fa-heart mini-card-icon social"></i>
+                                <h3 class="mini-card-title">Social Readiness</h3>
+                                <p class="mini-card-text">Interact appropriately with adults and follow directions</p>
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <div class="mini-card academic">
+                                <i class="fas fa-book mini-card-icon academic"></i>
+                                <h3 class="mini-card-title">Academic Readiness</h3>
+                                <p class="mini-card-text">Basic foundational skills and knowledge</p>
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <div class="mini-card communication">
+                                <i class="fas fa-edit mini-card-icon communication"></i>
+                                <h3 class="mini-card-title">Communication</h3>
+                                <p class="mini-card-text">Express herself clearly and confidently</p>
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <div class="mini-card independence">
+                                <i class="fas fa-trophy mini-card-icon independence"></i>
+                                <h3 class="mini-card-title">Independence</h3>
+                                <p class="mini-card-text">Handle basic self-care tasks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Skills -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-book" style="color: #45b7d1;"></i>
+                    Academic Skills to Practice
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-4">
+                            <div class="skill-card letters">
+                                <div class="skill-icon-container">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3 class="skill-title">Letters & Sounds</h3>
+                                <ul class="skill-list">
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="letters-0">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Recognize and name all uppercase letters A-Z</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="letters-1">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Recognize most lowercase letters a-z</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="letters-2">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Know the sounds that letters make</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="letters-3">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Spell and write her first name</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="skill-card numbers">
+                                <div class="skill-icon-container">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h3 class="skill-title">Numbers & Counting</h3>
+                                <ul class="skill-list">
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="numbers-0">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Count from 1 to 20 (some schools may ask up to 30)</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="numbers-1">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Recognize written numbers 1-10</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="numbers-2">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Count objects (like counting 5 crayons)</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="numbers-3">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Understand 'more' and 'less'</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="skill-card concepts">
+                                <div class="skill-icon-container">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3 class="skill-title">Basic Concepts</h3>
+                                <ul class="skill-list">
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="concepts-0">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Colors: red, blue, yellow, green, orange, purple, pink, black, white, brown</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="concepts-1">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Shapes: circle, square, triangle, rectangle</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <button class="skill-checkbox" data-skill="concepts-2">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <span class="skill-text">Opposites: big/small, hot/cold, up/down, in/out</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Communication & Social Skills -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-heart" style="color: #ff6b6b;"></i>
+                    Communication & Social Skills
+                </div>
+                <div class="card-body">
+                    <div class="collapse-panel">
+                        <div class="collapse-header" onclick="toggleCollapse('panel1')">
+                            📋 Personal Information
+                            <i class="fas fa-chevron-down collapse-arrow" id="arrow1"></i>
+                        </div>
+                        <div class="collapse-content" id="panel1">
+                            <p>Practice having Ira clearly state:</p>
+                            <ul class="list">
+                                <li class="list-item">• Full name (first and last)</li>
+                                <li class="list-item">• Age and birthday</li>
+                                <li class="list-item">• Parents'/guardians' names</li>
+                                <li class="list-item">• Address (at least street name and city)</li>
+                                <li class="list-item">• Phone number (if age-appropriate)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="collapse-panel">
+                        <div class="collapse-header" onclick="toggleCollapse('panel2')">
+                            👂 Following Directions
+                            <i class="fas fa-chevron-down collapse-arrow" id="arrow2"></i>
+                        </div>
+                        <div class="collapse-content" id="panel2">
+                            <p>Practice simple 2-3 step directions:</p>
+                            <ul class="list">
+                                <li class="list-item">• "Please pick up the red crayon, draw a circle, then put the crayon back"</li>
+                                <li class="list-item">• "Stand up, clap your hands three times, then sit down"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="collapse-panel">
+                        <div class="collapse-header" onclick="toggleCollapse('panel3')">
+                            🤝 Social Skills
+                            <i class="fas fa-chevron-down collapse-arrow" id="arrow3"></i>
+                        </div>
+                        <div class="collapse-content" id="panel3">
+                            <ul class="list">
+                                <li class="list-item">• Making eye contact when speaking</li>
+                                <li class="list-item">• Using "please," "thank you," and "excuse me"</li>
+                                <li class="list-item">• Raising hand to speak</li>
+                                <li class="list-item">• Taking turns</li>
+                                <li class="list-item">• Listening when others are talking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Questions -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-edit" style="color: #4ecdc4;"></i>
+                    Sample Interview Questions
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-4">
+                            <div class="question-card">
+                                <div class="question-card-header">About Herself</div>
+                                <div class="question-card-body">
+                                    <ul class="list">
+                                        <li class="question-item">❓ What's your name?</li>
+                                        <li class="question-item">❓ How old are you?</li>
+                                        <li class="question-item">❓ When is your birthday?</li>
+                                        <li class="question-item">❓ What do you like to do for fun?</li>
+                                        <li class="question-item">❓ Do you have any pets?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="question-card">
+                                <div class="question-card-header">Academic Questions</div>
+                                <div class="question-card-body">
+                                    <ul class="list">
+                                        <li class="question-item">❓ Can you tell me what letter this is?</li>
+                                        <li class="question-item">❓ What sound does this letter make?</li>
+                                        <li class="question-item">❓ Can you count these blocks?</li>
+                                        <li class="question-item">❓ What color is this?</li>
+                                        <li class="question-item">❓ What shape is this?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="question-card">
+                                <div class="question-card-header">School-Related Questions</div>
+                                <div class="question-card-body">
+                                    <ul class="list">
+                                        <li class="question-item">❓ Are you excited about coming to school?</li>
+                                        <li class="question-item">❓ What do you think you'll do at school?</li>
+                                        <li class="question-item">❓ Who helps you at home?</li>
+                                        <li class="question-item">❓ What's your favorite book?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Schedule -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-calendar" style="color: #f39c12;"></i>
+                    2-Week Practice Schedule
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-6">
+                            <div class="schedule-card">
+                                <div class="schedule-header-week1">Foundation Building - Week 1</div>
+                                <div class="schedule-body">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="timeline-dot green"></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-strong">Days 1-3:</span> Focus on personal information and basic letters
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-dot blue"></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-strong">Days 4-5:</span> Work on numbers and counting
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-dot red"></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-strong">Weekend:</span> Review shapes, colors, and play educational games
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-6">
+                            <div class="schedule-card">
+                                <div class="schedule-header-week2">Integration & Confidence - Week 2</div>
+                                <div class="schedule-body">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="timeline-dot green"></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-strong">Days 1-3:</span> Practice following directions and fine motor skills
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-dot blue"></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-strong">Days 4-5:</span> Mock interview practice with family
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-dot red"></div>
+                                            <div class="timeline-content">
+                                                <span class="timeline-strong">Weekend:</span> Light review and confidence building
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interview Day Tips -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-trophy" style="color: #52c41a;"></i>
+                    Interview Day Tips
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-4">
+                            <div class="tips-card">
+                                <div class="tips-header">👕 What to Wear</div>
+                                <div class="tips-body">
+                                    <ul class="list">
+                                        <li class="list-item">• Comfortable, weather-appropriate clothing</li>
+                                        <li class="list-item">• Shoes she can manage independently</li>
+                                        <li class="list-item">• Avoid new clothes that might be uncomfortable</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="tips-card">
+                                <div class="tips-header">🎒 What to Bring</div>
+                                <div class="tips-body">
+                                    <ul class="list">
+                                        <li class="list-item">• Any required documents</li>
+                                        <li class="list-item">• A comfort item if allowed</li>
+                                        <li class="list-item">• Positive attitude and smile!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="tips-card">
+                                <div class="tips-header">⏰ Before the Interview</div>
+                                <div class="tips-body">
+                                    <ul class="list">
+                                        <li class="list-item">• Get a good night's sleep</li>
+                                        <li class="list-item">• Eat a healthy breakfast</li>
+                                        <li class="list-item">• Arrive a few minutes early</li>
+                                        <li class="list-item">• Use the bathroom before starting</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Encouragement -->
+            <div class="alert">
+                <h2 class="alert-title">🎉 Remember: The Goal is School Readiness</h2>
+                <p class="alert-description">
+                    The interview isn't about perfection - it's about understanding where Ira is in her development 
+                    and ensuring Kindergarten is the right fit.
+                </p>
+                <div class="tags">
+                    <span class="tag success">✅ Building confidence - Celebrate what she knows!</span>
+                    <span class="tag processing">✅ Making it fun - Learning should be enjoyable</span>
+                    <span class="tag warning">✅ Staying positive - Your encouragement means everything</span>
+                    <span class="tag purple">✅ Being patient - Every child develops at their own pace</span>
+                </div>
+            </div>
+
+            <h2 class="final-title">Good luck, Ira! You're going to do great! 🌟</h2>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">
+                Kindergarten Interview Preparation Guide • Made with ❤️ for Ira's Success
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Progress tracking functionality
+        const completedItems = new Set();
+
+        function toggleCompleted(skillId) {
+            const checkbox = document.querySelector(`[data-skill="${skillId}"]`);
+            const text = checkbox.nextElementSibling;
+            
+            if (completedItems.has(skillId)) {
+                completedItems.delete(skillId);
+                checkbox.classList.remove('completed');
+                text.classList.remove('completed');
+            } else {
+                completedItems.add(skillId);
+                checkbox.classList.add('completed');
+                text.classList.add('completed');
+            }
+        }
+
+        // Add click listeners to all skill checkboxes
+        document.querySelectorAll('.skill-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                toggleCompleted(checkbox.dataset.skill);
+            });
+        });
+
+        // Collapse functionality
+        function toggleCollapse(panelId) {
+            const content = document.getElementById(panelId);
+            const arrow = document.getElementById(`arrow${panelId.slice(-1)}`);
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                arrow.classList.remove('active');
+            } else {
+                content.classList.add('active');
+                arrow.classList.add('active');
+            }
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive feedback
+        document.querySelectorAll('.skill-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('mouseenter', () => {
+                checkbox.style.transform = 'scale(1.1)';
+            });
+            
+            checkbox.addEventListener('mouseleave', () => {
+                checkbox.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
